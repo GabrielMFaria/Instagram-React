@@ -1,21 +1,17 @@
-import NavBar from "./NavBar"
-import Body from "./Body"
-import Stories from "./Stories"
-import Posts from "./Posts"
-import SideBar from "./SideBar"
-import User from "./User"
-import Suggestions from "./Suggestions"
+import NavBar from "./NavBar";
+import Body from "./Body";
+import SideBar from "./SideBar";
 
-export default function App(){
+export default function App() {
   return (
-   <div>
-      <NavBar/>
-      <Body/>
-      <Stories/>
-      <Posts/>
-      <SideBar/>
-      <User/>
-      <Suggestions/>
-   </div>
+    <div>
+      <div className="navbar">
+        <NavBar />
+      </div>
+      <div className="corpo">
+        <Body />
+        <SideBar />
+      </div>
+    </div>
   );
 }

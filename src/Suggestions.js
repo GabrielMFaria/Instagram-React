@@ -1,11 +1,30 @@
-export default function Suggestions(){
-  return(
-    <ul class="sgt">
-      <img src = "assets\img/bad.vibes.memes.svg" />
-      <img src = "assets\img/chibirdart.svg" />
-      <img src = "assets\img/razoesparaacreditar.svg" />
-      <img src = "assets\img/adorable_animals.svg" />
-      <img src = "assets\img/smallcutecats.svg" />
+export default function Suggestions() {
+  const suggestions = [
+    { usuario: "bad.vibes.memes", aviso: "Segue você", img: "assets/img/bad.vibes.memes.svg" },
+    { usuario: "chibirdart", aviso: "Segue você", img: "assets/img/chibirdart.svg" },
+    { usuario: "razoesparaacreditar", aviso: "Novo no Instagram", img: "assets/img/razoesparaacreditar.svg" },
+    { usuario: "adorable_animals", aviso: "Segue você", img: "assets/img/adorable_animals.svg" },
+    { usuario: "smallcutecats", aviso: "Segue você", img: "assets/img/smallcutecats.svg" },
+  ];
+
+  return (
+    <ul className="sugestoes">
+      <li className="titulo">
+        <span>Sugestões para você</span>
+        <strong>Ver Tudo</strong>
+      </li>
+      {suggestions.map((suggestion, index) => (
+        <li key={index} className="sugestao">
+          <div className="usuario">
+            <img src={suggestion.img} alt={suggestion.usuario} />
+            <div className="texto">
+              <strong>{suggestion.usuario}</strong>
+              <span>{suggestion.aviso}</span>
+            </div>
+          </div>
+          <button className="seguir">Seguir</button>
+        </li>
+      ))}
     </ul>
-  )
+  );
 }
